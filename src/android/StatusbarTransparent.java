@@ -15,14 +15,14 @@ public class StatusbarTransparent extends CordovaPlugin {
 	public boolean execute(String action, JSONArray args, CallbackContext callback) throws JSONException {
 		// grab the correct methods
 		if(action.equalsIgnoreCase("enable")) {
-			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+			if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
 				cordova.getActivity().runOnUiThread( new Runnable() {
 					public void run() {
 						setStatusBarUpperAPI21();
 					}
 				});
 				callback.success();
-			} else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+			} else if (VERSION.SDK_INT >= VERSION_CODES.KITKAT) {
 				cordova.getActivity().runOnUiThread( new Runnable() {
 					public void run() {
 						setStatusBarUpperAPI19();
@@ -64,6 +64,6 @@ public class StatusbarTransparent extends CordovaPlugin {
 	// 4.4 - 5.0版本
 	private void setStatusBarUpperAPI19() {
 		Window window = cordova.getActivity().getWindow();
-		window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+		window.addFlags(LayoutParams.FLAG_TRANSLUCENT_STATUS);
 	}
 }
