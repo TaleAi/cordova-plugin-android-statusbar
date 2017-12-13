@@ -9,7 +9,7 @@ Plugin for Cordova >= 3.0
 
 For Cordova:
 
-	cordova plugin add https://github.com/TaleAi/cordova-plugin-statusbar.git
+	cordova plugin add https://github.com/TaleAi/cordova-plugin-android-statusbar.git
 
 #### Using the plugin
 
