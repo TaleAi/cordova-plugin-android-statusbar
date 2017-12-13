@@ -53,17 +53,15 @@ public class StatusbarTransparent extends CordovaPlugin {
 
 	// 5.0版本以上
 	private void setStatusBarUpperAPI21() {
-		Window window = cordova.getActivity().getWindow();
 		//设置透明状态栏,这样才能让 ContentView 向上
-		window.clearFlags(LayoutParams.FLAG_TRANSLUCENT_STATUS);
+		cordova.getActivity().getWindow().clearFlags(LayoutParams.FLAG_TRANSLUCENT_STATUS);
 
 		//需要设置这个 flag 才能调用 setStatusBarColor 来设置状态栏颜色
-		window.addFlags(LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+		cordova.getActivity().getWindow().addFlags(LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
 	}
 
 	// 4.4 - 5.0版本
 	private void setStatusBarUpperAPI19() {
-		Window window = cordova.getActivity().getWindow();
-		window.addFlags(LayoutParams.FLAG_TRANSLUCENT_STATUS);
+		cordova.getActivity().getWindow().addFlags(LayoutParams.FLAG_TRANSLUCENT_STATUS);
 	}
 }
